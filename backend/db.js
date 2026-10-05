@@ -1,5 +1,7 @@
-const mongoose = require('mongoose'); //Import Mongoose
-const mongoURI = "mongodb://localhost:27017/" //MongoDB connection URL as mongoDB(mongoDB protocol) localhost(mongoDB is running on your own computer) 27017(default mongoDB port)
+const mongoose = require('mongoose');
+
+require('dotenv').config(); //require dotenv to use environment variables from .env file
+const mongoURI = process.env.MONGO_URI; //MongoDB connection URL from environment variables
 
 const connectToMongo = async () => { //create connection function
     try{ //try attempts the connection, if something goes wroong , catch handles the error
